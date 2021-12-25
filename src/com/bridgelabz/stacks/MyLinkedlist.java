@@ -1,14 +1,14 @@
 package com.bridgelabz.stacks;
 
 	public class MyLinkedlist {
-	    public   INode head;
-	    public   INode tail;
+	    public   Node head;
+	    public   Node tail;
 
 	    public MyLinkedList(){
 	            this.head = null;
 	            this.tail = null;
 	        }
-	    public void add(INode newNode) {
+	    public void add(Node newNode) {
 	        if(this.tail == null){
 	            this.tail=newNode;
 	        }
@@ -16,12 +16,12 @@ package com.bridgelabz.stacks;
 	            this.head=newNode;
 
 	        }else{
-	            INode tempNode = this.head;
+	            Node tempNode = this.head;
 	            this.head = newNode;
 	            this.head.setNext(tempNode);
 	         }
 	        }
-	     public void append(INode newNode){
+	     public void append(Node newNode){
 	        if(this.head == null){
 	            this.head=newNode;
 	        }
@@ -43,8 +43,8 @@ package com.bridgelabz.stacks;
 	     public Integer peek() {
 	    	 return (Integer)head.getKey();
 	     }
-	     public void insert(INode myNode ,INode newNode){
-	        INode tempNode = myNode.getNext();
+	     public void insert(Node myNode ,Node newNode){
+	        Node tempNode = myNode.getNext();
 	        myNode.setNext(newNode);
 	        newNode.setNext(tempNode);
 	        }
@@ -56,14 +56,14 @@ package com.bridgelabz.stacks;
 	    		 System.out.println("Not Empty");
 	    	 }
 	     }
-	     public INode popLast() {
+	     public Node popLast() {
 	         if (head == null) {
 	             System.out.println("Empty");
 	         } else if (head.getNext() == null) {
 	             head = null;
 	         } else {
-	             INode currentNode = head;
-	             INode preNode = head;
+	             Node currentNode = head;
+	             Node preNode = head;
 	             while (currentNode.getNext() != null) {
 	                 preNode = currentNode;
 	                 currentNode = currentNode.getNext();
@@ -75,7 +75,7 @@ package com.bridgelabz.stacks;
 
 	     public  int size(){
 	    	 int counter = 1;
-	         INode tempNode = this.head;
+	         Node tempNode = this.head;
 	         while(tempNode != this.tail) {
 	             if (tempNode.getNext() == null) {
 
@@ -87,8 +87,8 @@ package com.bridgelabz.stacks;
 	        System.out.println("Size of current Linked List is: "+counter);
 	        return counter;
 	     }
-	     public void search(INode myNode) {
-	            INode tempNode = this.head;
+	     public void search(Node myNode) {
+	            Node tempNode = this.head;
 	            while(tempNode != null ) {
 	                if (myNode.getKey() == tempNode.getKey()) {
 	                    System.out.println("Element found :"+myNode.getKey());
@@ -97,11 +97,11 @@ package com.bridgelabz.stacks;
 	                tempNode=tempNode.getNext();
 	            }
 	        }
-	      public void insertUsingKey(INode myNode,INode value){
-	            INode tempNode = this.head;
+	      public void insertUsingKey(Node myNode,Node value){
+	            Node tempNode = this.head;
 	            while(tempNode != null ) {
 	                if (myNode.getKey() == tempNode.getKey()) {
-	                    INode temp =tempNode.getNext();
+	                   Node temp =tempNode.getNext();
 	                    tempNode.setNext(value);
 	                    tempNode = tempNode.getNext();
 	                    tempNode.setNext(temp);
@@ -110,13 +110,13 @@ package com.bridgelabz.stacks;
 	                tempNode=tempNode.getNext();
 	            }
 	        }
-	      public void deleteKey(INode myNode ){
-	            INode tempNode = this.head;
+	      public void deleteKey(Node myNode ){
+	            Node tempNode = this.head;
 	            while(tempNode != null ) {
 	                if (myNode.getKey() == tempNode.getKey()) {
-	                    INode temp =tempNode.getNext();
+	                    Node temp =tempNode.getNext();
 	                    //tempNode= null;
-	                    INode demoNode = this.head;
+	                    Node demoNode = this.head;
 	                    demoNode = demoNode.getNext();
 	                    demoNode.setNext(temp);
 	                    break;
@@ -126,7 +126,7 @@ package com.bridgelabz.stacks;
 	        }
 	    public  void printMyNodes(){
 	        StringBuffer myNodes = new StringBuffer("My Nodes:");
-	        INode tempNode = head;
+	        Node tempNode = head;
 	        while(tempNode.getNext()!= null){
 	            myNodes.append(tempNode.getKey());
 	            if(!tempNode.equals(tail))
@@ -136,5 +136,5 @@ package com.bridgelabz.stacks;
 	        myNodes.append(tempNode.getKey());
 	        System.out.println(myNodes);
 	    }
-	}
+}
 

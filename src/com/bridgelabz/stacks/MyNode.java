@@ -1,8 +1,8 @@
 package com.bridgelabz.stacks;
 
-public class MyNode<K extends Comparable> implements INode<K> {
+public class MyNode<K extends Comparable> implements Node<K> {
         private K key;
-        private INode next;
+        private Node next;
 
         public MyNode(K key) {
             this.key =key;
@@ -16,10 +16,10 @@ public class MyNode<K extends Comparable> implements INode<K> {
         public void setKey() {
             this.key=key;
         }
-        public INode<K> getNext() {
+        public Node<K> getNext() {
             return next;
         }
-        public void setNext(INode next) {
+        public void setNext(Node next) {
             this.next =(MyNode<K>) next;
         }
 }
