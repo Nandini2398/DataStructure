@@ -9,7 +9,7 @@ package com.bridgelabz.linkedlist;
 	        myLinkedList.add(myFirstNode);
 	        myLinkedList.append(myThirdNode);
 	        myLinkedList.insert(myFirstNode,mySecondNode);
-	        myLinkedList.pop();
+	        myLinkedList.popLast();
 	        myLinkedList.printMyNodes();
 	    }
-}
+	}
