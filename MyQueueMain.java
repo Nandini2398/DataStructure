@@ -9,7 +9,8 @@ public class MyQueueMain {
 		myQueue.enqueue(myFirstNode);
 		myQueue.enqueue(mySecondNode);
 		myQueue.enqueue(myThirdNode);
+		myQueue.dequeue();
+		myQueue.dequeue();
 		myQueue.printQueue();
 	}
 }
-	

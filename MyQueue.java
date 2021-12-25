@@ -10,6 +10,9 @@ private final MyLinkedlist myLinkedlist;
 		myLinkedlist.append(newNode);
 	}
 	public void printQueue() {
-		myLinkedlist.printMyNodes();
+		myLinkedList.printMyNodes();
+	}
+	public int dequeue() {
+		return myLinkedlist.pop();
 	}
 }
